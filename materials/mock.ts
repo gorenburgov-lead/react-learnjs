@@ -1,4 +1,6 @@
-export const restaurants = [
+import type { RestaurantsList } from "../src/components/types";
+
+export const restaurants: RestaurantsList = [
   {
     id: "a757a0e9-03c1-4a2a-b384-8ac21dbe2fb2",
     name: "Dishoom",

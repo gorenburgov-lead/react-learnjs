@@ -1,15 +1,19 @@
 import "./App.css";
 import { restaurants } from "../../materials/mock";
-import type { RestaurantsList } from "./types";
-import { Card } from "./card/card";
+import { RestaurantCard } from "./restaurant-card/restaurant-card";
 export const App = () => {
-  const restaurantsList = (restaurants as RestaurantsList).map(
-    ({ name, menu, reviews, id }) => (
-      <li>
-        <Card key={id} name={name} menu={menu} reviews={reviews}></Card>
-      </li>
-    ),
+  return (
+    <ul>
+      {restaurants.map(({ name, menu, reviews, id }) => (
+        <li>
+          <RestaurantCard
+            key={id}
+            name={name}
+            menu={menu}
+            reviews={reviews}
+          ></RestaurantCard>
+        </li>
+      ))}
+    </ul>
   );
-
-  return <ul>{restaurantsList}</ul>;
 };
