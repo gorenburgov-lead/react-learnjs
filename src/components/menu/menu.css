@@ -1,0 +1,15 @@
+li {
+  margin-top: .5em;
+}
+
+.menu_item-name {
+  font: 1em sans-serif;
+}
+
+.menu_item-price {
+  font: bold 1em sans-serif;
+}
+
+.menu_item-ingredients {
+  font: 0.8em sans-serif;
+}
