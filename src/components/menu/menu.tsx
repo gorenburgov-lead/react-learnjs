@@ -1,3 +1,4 @@
+import { Counter } from "../counter/counter";
 import type { MenuItem } from "../types";
 import "./menu.css";
 
@@ -17,6 +18,7 @@ export const Menu = ({ items }: { items: MenuItem[] }) => {
                 {item.ingredients.join(", ")}
               </span>
             </div>
+            <Counter maxCount={5} />
           </li>
         ))}
       </ul>
