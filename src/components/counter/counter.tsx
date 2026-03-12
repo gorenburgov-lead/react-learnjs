@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./counter.css"
+import "./counter.css";
 
 export const Counter = ({ maxCount }: { maxCount: number }) => {
   const [count, setCount] = useState(0);

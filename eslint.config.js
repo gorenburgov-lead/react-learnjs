@@ -5,7 +5,6 @@ import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import prettierConfig from "eslint-config-prettier";
 
-
 export default [
   // 1. Игнорируемые папки (не линтим сборку и зависимости)
   {
@@ -23,7 +22,7 @@ export default [
     files: ["**/*.{jsx,tsx}"],
     plugins: {
       react,
-      "react-hooks": reactHooks
+      "react-hooks": reactHooks,
     },
     languageOptions: {
       parserOptions: {
@@ -43,7 +42,10 @@ export default [
       // Кастомные настройки (примеры)
       "react/prop-types": "off", // Отключаем prop-types, так как используем TypeScript
       "react/react-in-jsx-scope": "off", // Отключаем требование React в области видимости (для нового JSX transform)
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }], // Предупреждение на неиспользуемые переменные, игнорируя начинающиеся с "_"
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ], // Предупреждение на неиспользуемые переменные, игнорируя начинающиеся с "_"
     },
     settings: {
       react: {
@@ -59,5 +61,5 @@ export default [
       "no-console": "off", // Разрешаем console.log в тестах
     },
   },
-  prettierConfig
+  prettierConfig,
 ];
