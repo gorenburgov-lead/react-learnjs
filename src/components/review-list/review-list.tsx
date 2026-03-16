@@ -1,7 +1,9 @@
 import type { Review } from "../types";
 
-export const ReviewList = ({items}: {items: Review[]}) => {
-    return (<><h3>Отзывы</h3>
+export const ReviewList = ({ items }: { items: Review[] }) => {
+  return (
+    <>
+      <h3>Отзывы</h3>
       <ul>
         {items.map((review) => (
           <li key={review.id}>
@@ -12,6 +14,7 @@ export const ReviewList = ({items}: {items: Review[]}) => {
             <div className="review-text">{review.text}</div>
           </li>
         ))}
-      </ul></>)
-
-}
+      </ul>
+    </>
+  );
+};

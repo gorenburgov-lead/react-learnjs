@@ -1,0 +1,13 @@
+.tab {
+  flex: 1 1 150px;
+  background-color: #4caf50;
+  padding: 20px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tab.disabled {
+  background-color: #8eaf8f;
+  cursor: default;
+}
