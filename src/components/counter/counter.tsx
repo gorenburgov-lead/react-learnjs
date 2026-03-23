@@ -1,23 +1,16 @@
-import { useState } from "react";
-import "./counter.css";
+import styles from "./counter.module.css";
+interface Props {
+  decrement: () => void;
+  increment: () => void;
+  count: number;
+}
 
-export const Counter = ({ maxCount }: { maxCount: number }) => {
-  const [count, setCount] = useState(0);
+export const Counter = ({ decrement, increment, count }: Props) => {
   return (
     <div>
-      <button
-        onClick={() => setCount((count) => (count > 0 ? --count : count))}
-      >
-        -
-      </button>
-      <span className="count">{count}</span>
-      <button
-        onClick={() =>
-          setCount((count) => (count < maxCount ? ++count : count))
-        }
-      >
-        +
-      </button>
+      <button onClick={decrement}>-</button>
+      <span className={styles.count}>{count}</span>
+      <button onClick={increment}>+</button>
     </div>
   );
 };

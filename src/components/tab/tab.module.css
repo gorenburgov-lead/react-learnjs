@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 
-.tab.disabled {
+.disabled {
   background-color: #8eaf8f;
   cursor: default;
 }
