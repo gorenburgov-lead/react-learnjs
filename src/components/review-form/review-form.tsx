@@ -80,12 +80,16 @@ export const ReviewForm = () => {
     dispatch({
       type: "SET_FIELD",
       field: "rating",
-      value: rating,
+      value: state.rating > 0 ? state.rating - 1 : state.rating,
     });
-    setRating((rating) => (rating > 0 ? --rating : rating));
   };
-  const handleIncrement = () =>
-    setRating((rating) => (rating < MAX_RATING ? ++rating : rating));
+  const handleIncrement = () => {
+    dispatch({
+      type: "SET_FIELD",
+      field: "rating",
+      value: state.rating < MAX_RATING ? state.rating + 1 : state.rating,
+    });
+  }
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>
@@ -97,7 +101,7 @@ export const ReviewForm = () => {
       <Counter
         increment={handleIncrement}
         decrement={handleDecrement}
-        count={rating}
+        count={state.rating}
       />
       <button type="submit">Submit</button>
       <button type="reset">Clear</button>
