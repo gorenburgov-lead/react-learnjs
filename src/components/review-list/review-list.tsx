@@ -1,4 +1,5 @@
 import type { Review } from "../types";
+import styles from "./review-list.module.css";
 
 export const ReviewList = ({ items }: { items: Review[] }) => {
   return (
@@ -8,10 +9,10 @@ export const ReviewList = ({ items }: { items: Review[] }) => {
         {items.map((review) => (
           <li key={review.id}>
             <div>
-              <span className="review-user">{review.user}</span>-
-              <span className="review-rating">{review.rating}</span>
+              <span className={styles.review_user}>{review.user}</span>-
+              <span className={styles.review_rating}>{review.rating}</span>
             </div>
-            <div className="review-text">{review.text}</div>
+            <div className={styles.review_text}>{review.text}</div>
           </li>
         ))}
       </ul>

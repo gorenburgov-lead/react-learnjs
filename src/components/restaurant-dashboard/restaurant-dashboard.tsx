@@ -2,6 +2,8 @@ import { useState } from "react";
 import { restaurants } from "../../../materials/mock";
 import { RestaurantCard } from "../restaurant-card/restaurant-card";
 import { Tab } from "../tab/tab";
+import styles from "./restaurant-dashboard.module.css";
+
 export const RestaurantDashboard = () => {
   const [selectedTabId, setSelectedTabId] = useState(restaurants[0].id);
   const { name, menu, reviews } =
@@ -9,7 +11,7 @@ export const RestaurantDashboard = () => {
     restaurants[0];
   return (
     <>
-      <div className="tabs-container">
+      <div className={styles.tabs_container}>
         {restaurants.map(({ name, id }) => (
           <Tab
             name={name}

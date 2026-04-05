@@ -1,11 +1,11 @@
-.review-user {
+.review_user {
   font: 1em sans-serif;
 }
 
-.review-rating {
+.review_rating {
   font: bold 1em serif;
 }
 
-.review-text {
+.review_text {
   font: 0.8em sans-serif;
 }

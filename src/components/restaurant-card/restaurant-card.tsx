@@ -1,4 +1,5 @@
 import { Menu } from "../menu/menu";
+import { ReviewForm } from "../review-form/review-form";
 import { ReviewList } from "../review-list/review-list";
 import type { Restaurant } from "../types";
 import "./restaurant-card.css";
@@ -13,6 +14,7 @@ export const RestaurantCard = ({
       <h2>{name}</h2>
       <Menu items={menu} />
       <ReviewList items={reviews} />
+      <ReviewForm />
     </>
   );
 };
