@@ -1,6 +1,5 @@
 import {
   useReducer,
-  useState,
   type ChangeEventHandler,
   type ReactEventHandler,
   type SubmitEventHandler,
@@ -51,11 +50,7 @@ const reviewReducer = (state: State, action: Action) => {
 };
 
 export const ReviewForm = () => {
-  const [rating, setRating] = useState(0);
-  const [state, dispatch] = useReducer(reviewReducer, {
-    ...initialState,
-    rating,
-  });
+  const [state, dispatch] = useReducer(reviewReducer, initialState);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     dispatch({
@@ -89,7 +84,7 @@ export const ReviewForm = () => {
       field: "rating",
       value: state.rating < MAX_RATING ? state.rating + 1 : state.rating,
     });
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} onReset={handleReset}>

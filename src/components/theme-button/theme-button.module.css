@@ -1,0 +1,7 @@
+.default {
+  background-color: aqua;
+}
+.alt {
+  background-color: #333;
+  color: white;
+}

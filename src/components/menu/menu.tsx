@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { DishCounter } from "../dish-counter/dish-counter";
 import type { MenuItem } from "../types";
 import styles from "./menu.module.css";
+import { AuthorizationContext } from "../authorization-provider";
 
 export const Menu = ({ items }: { items: MenuItem[] }) => {
+  const { isAuthorized } = useContext(AuthorizationContext);
   return (
     <>
       <h3>Меню</h3>
@@ -18,7 +21,7 @@ export const Menu = ({ items }: { items: MenuItem[] }) => {
                 {item.ingredients.join(", ")}
               </span>
             </div>
-            <DishCounter maxCount={5} />
+            {isAuthorized && <DishCounter maxCount={5} />}
           </li>
         ))}
       </ul>
